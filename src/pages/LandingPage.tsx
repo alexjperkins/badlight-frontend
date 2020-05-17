@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { useHistory } from 'react-router-dom'
 import { Box, Button } from '@material-ui/core'
 import styled from 'styled-components'
 import { ScreenContainer } from '../components/Layout'
@@ -12,33 +11,19 @@ const LampImg = styled.img`
 `
 
 export const LandingPage: FC = () => {
-  const history = useHistory()
-
-  const linkTo = React.useCallback((path: string) => () => history.push(path), [
-    history
-  ])
-
   return(
     <ScreenContainer>
       <Box
-        my={4}
-        display="flex"
-        justifyContent="center"
-      >
-        <Box maxWidth={['50%', '200px']}>
-          <LampImg src={Lamp} alt="logo" />
-        </Box>
-      </Box>
-
-      <Box
-        justifyContent="space-between"
         display="flex"
         flexDirection="column"
         minHeight={['100vh', '100%']}
         width={['100%', '500px']}
         margin="0 auto"
       >
-        <Box>
+        <Box
+          display="flex"
+          justifyContent="space-around"
+        >
           <Box mt={6}>
             <Heading gutterBottom>{`BadLight`}</Heading>
             <Text gutterBottom>
@@ -46,25 +31,27 @@ export const LandingPage: FC = () => {
             </Text>
           </Box>
 
-          
-          <Box mt={6}>
-            <Text gutterBottom>
-              {`Coming Soon...`}
-            </Text>
+          <Box maxWidth={['50%', '200px']}>
+            <LampImg src={Lamp} alt="logo" />
           </Box>
+        </Box>
 
-          <Box mt={4}>
-            <Box>
-              <Button
-                disableElevation
-                variant="contained"
-                color="secondary"
-                fullWidth
-                onClick={linkTo('/signup/')}
-              >
-                {`Signup`}
-              </Button>
-            </Box>
+        <Box mt={6}>
+          <Text gutterBottom>
+            {`Coming Soon...`}
+          </Text>
+        </Box>
+
+        <Box mt={4}>
+          <Box>
+            <Button
+              disableElevation
+              variant="contained"
+              color="secondary"
+              fullWidth
+            >
+              {`Signup`}
+            </Button>
           </Box>
         </Box>
       </Box>
