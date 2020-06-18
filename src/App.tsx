@@ -7,9 +7,10 @@ import { Navbar } from './components/Navbar'
 import { gqlClient } from './clients'
 import { theme } from './theme'
 
-import './App.css'
 import { LandingPage } from './pages/LandingPage'
+import { SignupForm } from './pages/Signup'
 
+import './App.css'
 
 const Loader = () => (
   <div className="App">
@@ -27,6 +28,7 @@ function App() {
 
               <Switch>
                 <Route exact path="/" component={ LandingPage } />
+                <Route exact path="/signup" component={ SignupForm } />
               </Switch>
 
             </BrowserRouter>

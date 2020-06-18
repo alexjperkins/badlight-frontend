@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Redirect } from 'react-router-dom'
 import { Box, Button } from '@material-ui/core'
 import styled from 'styled-components'
 import { ScreenContainer } from '../components/Layout'
@@ -11,6 +12,11 @@ const LampImg = styled.img`
 `
 
 export const LandingPage: FC = () => {
+
+  const renderSignUpRedirect = () => {
+    return <Redirect to='/signup' />
+  }
+
   return(
     <ScreenContainer>
       <Box
@@ -48,6 +54,7 @@ export const LandingPage: FC = () => {
               disableElevation
               variant="contained"
               color="secondary"
+              onClick={renderSignUpRedirect}
               fullWidth
             >
               {`Signup`}
